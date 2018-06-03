@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,7 +38,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home_fragment, container, false);
 
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new GridLayoutManager(this.getContext(), 3));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
 
 
         List<HomeCards> list = new ArrayList<>();
@@ -74,16 +75,6 @@ public class HomeFragment extends Fragment {
         list.add(new HomeCards(
                 R.drawable.guide,
                 "Guidelines",
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                    }
-                }
-        ));
-        list.add(new HomeCards(
-                R.drawable.talk,
-                "Consult Expert",
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
